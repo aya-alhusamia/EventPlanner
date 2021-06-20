@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
       },
        name :{
         type: DataTypes.STRING,
-        validate: {
-          not: /^[event]+$/i
+        validate: 
+         { notContains : "event"}
        },
 
       email: {
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       bookedSeats : {
         type: DataTypes.INTEGER,
         validValue: {max: 5}
-        }
+        
       },
       startDate: {
         type: DataTypes.DATE,
